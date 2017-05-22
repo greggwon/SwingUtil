@@ -50,9 +50,9 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
  *  @author Gregg Wonderly <a href="mailto:gregg.wonderly@pobox.com">gregg.wonderly@pobox.com</a>
  *  @see CircularListModel
  */
-public class ListListModel<T> extends AbstractListModel 
-	implements List<T>,ComboBoxModel {
-
+public class ListListModel<T> extends AbstractListModel <T>
+	implements List<T>,ComboBoxModel<T> {
+	private static final long serialVersionUID = 1L;
 	protected List<T> delegate = new ArrayList<T>();
 
 	public int getSize() {
@@ -341,7 +341,7 @@ public class ListListModel<T> extends AbstractListModel
 		return delegate.subList( fromIndex, toIndex );
 	}
 
-	public <T> T[] toArray(T[] a) {
+	public <P> P[] toArray(P[] a) {
 		return delegate.toArray(a);
 	}
 }
